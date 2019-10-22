@@ -1,4 +1,4 @@
-FROM ensemblorg/ensembl-vep:release_95.3
+FROM ensemblorg/ensembl-vep:release_97.4
 MAINTAINER John Garza <johnegarza@wustl.edu>
 
 LABEL \
@@ -21,17 +21,17 @@ RUN perl INSTALL.pl --NO_UPDATE
 RUN mkdir -p /opt/lib/perl/VEP/Plugins
 WORKDIR /opt/lib/perl/VEP/Plugins
 
-RUN wget https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/95/Downstream.pm \
+RUN wget https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/97/Downstream.pm \
 https://raw.githubusercontent.com/griffithlab/pVACtools/master/tools/pvacseq/VEP_plugins/Wildtype.pm \
-https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/95/CADD.pm \
-https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/95/REVEL.pm \
-https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/95/ExACpLI.pm \
-https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/95/ExACpLI_values.txt \
-https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/95/LoFtool.pm \
-https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/95/LoFtool_scores.txt \
-https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/95/SpliceRegion.pm \
-https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/95/dbNSFP.pm \
-https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/95/dbNSFP_replacement_logic
+https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/97/CADD.pm \
+https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/97/REVEL.pm \
+https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/97/ExACpLI.pm \
+https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/97/ExACpLI_values.txt \
+https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/97/LoFtool.pm \
+https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/97/LoFtool_scores.txt \
+https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/97/SpliceRegion.pm \
+https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/97/dbNSFP.pm \
+https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/97/dbNSFP_replacement_logic
 
 COPY add_annotations_to_table_helper.py /usr/bin/add_annotations_to_table_helper.py
 COPY docm_and_coding_indel_selection.pl /usr/bin/docm_and_coding_indel_selection.pl
